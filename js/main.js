@@ -27,9 +27,10 @@ $(function () {
     $(window).scroll(() => {
         const height = $(document).scrollTop();
         $(".header_main>ul>li").removeClass("active");
-        if (height <= 1300) { // 0~1300px 사이일때 색나옴
+        if (height <= 1290) { // 0~1300px 사이일때 색나옴
             $(".header_main>ul>li:nth-child(1)").addClass("active");
         } else {
+            // 4501px 이상일때 색나옴
             $(".header_main>ul>li:nth-child(2)").addClass("active");
         }
         // 최상단 왔을때 메뉴색 해제 
@@ -53,9 +54,8 @@ $(function () {
         }
         $("html,body").animate({
             scrollTop: targetPosition
-        }, 400);
+        }, 300);
         $(".header_main>ul>li").removeClass("active");
         $(this).addClass("active");
     });
-
 });
